@@ -90,7 +90,7 @@ export function Player() {
           <button type="button" disabled={!episode}>
             <img src="/shuffle.svg" alt="Embaralhar"/>
           </button>
-          <button type="button" disabled={!episode}>
+          <button type="button" disabled={!episode || currentEpisodeIndex === 0}>
             <img src="/play-previous.svg" onClick={playPrevious} alt="Tocar anterior"/>
           </button>
           <button 
@@ -104,10 +104,10 @@ export function Player() {
               : <img src="/play.svg" alt="Tocar"/>
             }
           </button>
-          <button type="button" disabled={!episode}>
+          <button type="button" disabled={!episode || currentEpisodeIndex === episodeList.length - 1}>
             <img src="/play-next.svg" onClick={playNext} alt="Tocar próxima"/>
           </button>
-          <button type="button" disabled={!episode}>
+          <button type="button" disabled={!episode }>
             <img src="/repeat.svg" alt="Repetir"/>
           </button>
         </div>
